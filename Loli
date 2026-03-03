@@ -717,12 +717,305 @@ Name = <string> - The name of the button.
 Callback = <function> - The function of the button.
 ]]
 local Tab = Window:MakeTab({
-	Name = "credits",
-	Icon = "rbxassetid://4483345998",
+	Name = "auto skill",
+	Icon = "rbxassetid://16278245061",
 	PremiumOnly = false
 })
-local Section = Tab:AddSection({
-	Name = "script được làm bởi:loli youtube:Chanh Hub"
+--[[
+
+ ]]
+Tab:AddToggle({
+	Name = "Auto Sword",
+	Default = false,
+	Callback = function(z)
+		getgenv().autosword = z
+		spawn(function()
+			while getgenv().autosword do task.wait()
+				for i = 1,50000 do
+					game:GetService("ReplicatedStorage"):FindFirstChild("StatSystem"):WaitForChild("Points"):FireServer("Sword")
+					task.wait()
+				end
+			end
+		end)
+	end
+})
+
+Tab:AddToggle({
+	Name = "Auto Fruit",
+	Default = false,
+	Callback = function(z)
+		getgenv().autofruit = z
+		spawn(function()
+			while getgenv().autofruit do task.wait()
+				for i = 1,50000 do
+					game:GetService("ReplicatedStorage"):FindFirstChild("StatSystem"):WaitForChild("Points"):FireServer("DevilFruit")
+					task.wait()
+				end
+			end
+		end)
+	end
+})
+
+Tab:AddToggle({
+	Name = "Auto Health",
+	Default = false,
+	Callback = function(z)
+		getgenv().autohealth = z
+		spawn(function()
+			while getgenv().autohealth do task.wait()
+				for i = 1,50000 do
+					game:GetService("ReplicatedStorage"):FindFirstChild("StatSystem"):WaitForChild("Points"):FireServer("MaxHealth")
+					task.wait()
+				end
+			end
+		end)
+	end
+})
+
+Tab:AddToggle({
+	Name = "Auto Melee",
+	Default = false,
+	Callback = function(z)
+		getgenv().automelee = z
+		spawn(function()
+			while getgenv().automelee do task.wait()
+				for i = 1,50000 do
+					game:GetService("ReplicatedStorage"):FindFirstChild("StatSystem"):WaitForChild("Points"):FireServer("Melee")
+					task.wait()
+				end
+			end
+		end)
+	end
+})
+
+-- =========================
+-- AUTO SKILL Z
+-- =========================
+getgenv().autoskillZ = false
+Tab:AddToggle({
+	Name = "Auto Z",
+	Default = false,
+	Callback = function(z)
+		getgenv().autoskillZ = z
+		spawn(function()
+			while getgenv().autoskillZ do task.wait()
+				pcall(function()
+					for _, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+						if v:IsA("Tool") and v:FindFirstChild("Z") then
+							for _, c in pairs(v.Z:GetChildren()) do
+								if c:IsA("RemoteEvent") then
+									c:FireServer()
+								end
+							end
+						end
+					end
+				end)
+			end
+		end)
+	end
+})
+
+-- =========================
+-- AUTO SKILL X
+-- =========================
+getgenv().autoskillX = false
+Tab:AddToggle({
+	Name = "Auto X",
+	Default = false,
+	Callback = function(z)
+		getgenv().autoskillX = z
+		spawn(function()
+			while getgenv().autoskillX do task.wait()
+				pcall(function()
+					for _, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+						if v:IsA("Tool") and v:FindFirstChild("X") then
+							for _, c in pairs(v.X:GetChildren()) do
+								if c:IsA("RemoteEvent") then
+									c:FireServer()
+								end
+							end
+						end
+					end
+				end)
+			end
+		end)
+	end
+})
+
+-- =========================
+-- AUTO SKILL C
+-- =========================
+getgenv().autoskillC = false
+Tab:AddToggle({
+	Name = "Auto C",
+	Default = false,
+	Callback = function(z)
+		getgenv().autoskillC = z
+		spawn(function()
+			while getgenv().autoskillC do task.wait()
+				pcall(function()
+					for _, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+						if v:IsA("Tool") and v:FindFirstChild("C") then
+							for _, c in pairs(v.C:GetChildren()) do
+								if c:IsA("RemoteEvent") then
+									c:FireServer()
+								end
+							end
+						end
+					end
+				end)
+			end
+		end)
+	end
+})
+
+-- =========================
+-- AUTO SKILL V
+-- =========================
+getgenv().autoskillV = false
+Tab:AddToggle({
+	Name = "Auto V",
+	Default = false,
+	Callback = function(z)
+		getgenv().autoskillV = z
+		spawn(function()
+			while getgenv().autoskillV do task.wait()
+				pcall(function()
+					for _, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+						if v:IsA("Tool") and v:FindFirstChild("V") then
+							for _, c in pairs(v.V:GetChildren()) do
+								if c:IsA("RemoteEvent") then
+									c:FireServer()
+								end
+							end
+						end
+					end
+				end)
+			end
+		end)
+	end
+})
+
+-- =========================
+-- AUTO SKILL B
+-- =========================
+getgenv().autoskillB = false
+Tab:AddToggle({
+	Name = "Auto B",
+	Default = false,
+	Callback = function(z)
+		getgenv().autoskillB = z
+		spawn(function()
+			while getgenv().autoskillB do task.wait()
+				pcall(function()
+					for _, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+						if v:IsA("Tool") and v:FindFirstChild("B") then
+							for _, c in pairs(v.B:GetChildren()) do
+								if c:IsA("RemoteEvent") then
+									c:FireServer()
+								end
+							end
+						end
+					end
+				end)
+			end
+		end)
+	end
+})
+
+-- =========================
+-- AUTO SKILL N
+-- =========================
+getgenv().autoskillN = false
+Tab:AddToggle({
+	Name = "Auto N",
+	Default = false,
+	Callback = function(z)
+		getgenv().autoskillN = z
+		spawn(function()
+			while getgenv().autoskillN do task.wait()
+				pcall(function()
+					for _, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+						if v:IsA("Tool") and v:FindFirstChild("N") then
+							for _, c in pairs(v.N:GetChildren()) do
+								if c:IsA("RemoteEvent") then
+									c:FireServer()
+								end
+							end
+						end
+					end
+				end)
+			end
+		end)
+	end
+})
+
+-- =========================
+-- AUTO FRUIT SKILL (FULL SPAM)
+-- =========================
+getgenv().autofruitskill = false
+Tab:AddToggle({
+	Name = "Auto Fruit Skill",
+	Default = false,
+	Callback = function(z)
+		getgenv().autofruitskill = z
+		spawn(function()
+			while getgenv().autofruitskill do task.wait(0.05)
+				pcall(function()
+					local char = game.Players.LocalPlayer.Character
+					if char then
+						for _, tool in pairs(char:GetChildren()) do
+							if tool:IsA("Tool") then
+								for _, v in pairs(tool:GetDescendants()) do
+									if v:IsA("RemoteEvent") then
+										v:FireServer()
+									end
+								end
+							end
+						end
+					end
+				end)
+			end
+		end)
+	end
+})
+
+-- =========================
+-- AUTO HEAL
+-- =========================
+getgenv().autoheal = false
+Tab:AddToggle({
+	Name = "Auto Heal",
+	Default = false,
+	Callback = function(z)
+		getgenv().autoheal = z
+		spawn(function()
+			while getgenv().autoheal do task.wait(0.2)
+				pcall(function()
+					local player = game.Players.LocalPlayer
+					local char = player.Character
+					
+					if char and char:FindFirstChild("Humanoid") then
+						local hp = char.Humanoid.Health
+						local maxhp = char.Humanoid.MaxHealth
+						
+						if hp < maxhp * 0.5 then
+							for _, tool in pairs(player.Backpack:GetChildren()) do
+								if tool:IsA("Tool") then
+									char.Humanoid:EquipTool(tool)
+									for _, v in pairs(tool:GetDescendants()) do
+										if v:IsA("RemoteEvent") then
+											v:FireServer()
+										end
+									end
+								end
+							end
+						end
+					end
+				end)
+			end
+		end)
+	end
 })
 
 --[[
@@ -759,4 +1052,4 @@ Corner2.Parent = Image
 
 Toggle.MouseButton1Click:Connect(function()
   OrionLib:ToggleUi()
-end)   
+end)    
