@@ -17,7 +17,7 @@ PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
 ]]
 
 local Section = Tab:AddSection({
-	Name = "này bản free nên có v thôi,đòi hỏi = cho script cook"
+	Name = "script Up4 vnp"
 })
 
 --[[
